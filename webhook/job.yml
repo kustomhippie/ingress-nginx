@@ -1,0 +1,71 @@
+apiVersion: batch/v1
+kind: Job
+
+metadata:
+  name: nginx-create
+
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      serviceAccountName: nginx-webhook
+
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 2000
+
+      containers:
+        - name: create
+          image: nginx-certs
+          imagePullPolicy: Always
+
+          args:
+            - create
+            - --host=nginx-webhook,nginx-webhook.$(POD_NAMESPACE).svc
+            - --namespace=$(POD_NAMESPACE)
+            - --secret-name=nginx-webhook
+
+          env:
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+
+...
+---
+apiVersion: batch/v1
+kind: Job
+
+metadata:
+  name: nginx-patch
+
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      serviceAccountName: nginx-webhook
+
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 2000
+
+      containers:
+        - name: patch
+          image: nginx-certs
+          imagePullPolicy: Always
+
+          args:
+            - patch
+            - --webhook-name=nginx-webhook
+            - --namespace=$(POD_NAMESPACE)
+            - --patch-mutating=false
+            - --secret-name=nginx-webhook
+            - --patch-failure-policy=Fail
+
+          env:
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+
+...
