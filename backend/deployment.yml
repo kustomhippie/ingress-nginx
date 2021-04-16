@@ -15,7 +15,7 @@ spec:
       containers:
         - name: server
           image: nginx-backend
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
 
           securityContext:
             runAsUser: 65534
