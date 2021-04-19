@@ -1,9 +1,9 @@
 # ingress-nginx
 
-[![Build Status](http://cloud.drone.io/api/badges/kustomhippie/ingress-nginx/status.svg)](http://cloud.drone.io/kustomhippie/ingress-nginx)
+[![Build Status](http://drone.webhippie.de/api/badges/kustomhippie/ingress-nginx/status.svg)](http://drone.webhippie.de/kustomhippie/ingress-nginx)
 [![Join the Matrix chat at https://matrix.to/#/#webhippie:matrix.org](https://img.shields.io/badge/matrix-%23webhippie%3Amatrix.org-7bc9a4.svg)](https://matrix.to/#/#webhippie:matrix.org)
 
-This repository defines a [Kustomize](https://kustomize.io/) manifest which could be used by other repositories to generate a [Kubernetes](https://kubernetes.io/) manifest.
+This repository defines a [Kustomize](https://kustomize.io/) manifest which could be used by other repositories to generate a [Kubernetes](https://kubernetes.io/) manifest for the installation of [ingress-nginx](https://github.com/kubernetes/ingress-nginx).
 
 ## Usage
 
