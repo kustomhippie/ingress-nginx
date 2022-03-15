@@ -8,12 +8,8 @@ resources:
   - clusterrolebinding.yml
   - role.yml
   - rolebinding.yml
-
   - service.yml
   - daemonset.yml
-
-commonLabels:
-  app.kubernetes.io/component: controller
 
 configMapGenerator:
   - name: nginx-tcp
@@ -26,5 +22,10 @@ configMapGenerator:
 
 generatorOptions:
   disableNameSuffixHash: true
+
+images:
+  - name: nginx-controller
+    newName: k8s.gcr.io/ingress-nginx/controller
+    newTag: "v1.1.2"
 
 ...

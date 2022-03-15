@@ -4,11 +4,28 @@ kind: Deployment
 
 metadata:
   name: nginx-backend
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/component: backend
 
 spec:
   replicas: 1
+  revisionHistoryLimit: 3
+
+  strategy:
+    type: Recreate
+
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ingress-nginx
+      app.kubernetes.io/component: backend
 
   template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: ingress-nginx
+        app.kubernetes.io/component: backend
+
     spec:
       serviceAccountName: nginx-backend
 

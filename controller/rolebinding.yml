@@ -4,6 +4,9 @@ kind: RoleBinding
 
 metadata:
   name: nginx-controller
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/component: controller
 
 roleRef:
   apiGroup: rbac.authorization.k8s.io

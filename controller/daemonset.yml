@@ -4,6 +4,9 @@ kind: DaemonSet
 
 metadata:
   name: nginx-controller
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/component: controller
 
 spec:
   revisionHistoryLimit: 10
@@ -12,7 +15,17 @@ spec:
   updateStrategy:
     type: RollingUpdate
 
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ingress-nginx
+      app.kubernetes.io/component: controller
+
   template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: ingress-nginx
+        app.kubernetes.io/component: controller
+
     spec:
       serviceAccountName: nginx-controller
       terminationGracePeriodSeconds: 300

@@ -4,11 +4,12 @@ kind: Kustomization
 
 resources:
   - serviceaccount.yml
-
   - service.yml
   - deployment.yml
 
-commonLabels:
-  app.kubernetes.io/component: backend
+images:
+  - name: nginx-backend
+    newName: tboerger/errors
+    newTag: "latest"
 
 ...

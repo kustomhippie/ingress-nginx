@@ -4,6 +4,9 @@ kind: Role
 
 metadata:
   name: nginx-controller
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/component: controller
 
 rules:
   - apiGroups:

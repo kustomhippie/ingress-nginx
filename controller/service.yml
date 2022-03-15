@@ -4,10 +4,17 @@ kind: Service
 
 metadata:
   name: nginx-ingress
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/component: controller
 
 spec:
   externalTrafficPolicy: Local
   type: NodePort
+
+  selector:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/component: controller
 
   ports:
     - name: http
@@ -24,8 +31,15 @@ kind: Service
 
 metadata:
   name: nginx-metrics
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/component: controller
 
 spec:
+  selector:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/component: controller
+
   ports:
     - name: metrics
       port: 10254
@@ -38,8 +52,15 @@ kind: Service
 
 metadata:
   name: nginx-webhook
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/component: controller
 
 spec:
+  selector:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/component: controller
+
   ports:
     - name: webhook
       port: 443

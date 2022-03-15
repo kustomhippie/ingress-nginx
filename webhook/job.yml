@@ -4,9 +4,22 @@ kind: Job
 
 metadata:
   name: nginx-create
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/component: webhook
 
 spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ingress-nginx
+      app.kubernetes.io/component: webhook
+
   template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: ingress-nginx
+        app.kubernetes.io/component: webhook
+
     spec:
       restartPolicy: OnFailure
       serviceAccountName: nginx-webhook
@@ -39,9 +52,22 @@ kind: Job
 
 metadata:
   name: nginx-patch
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/component: webhook
 
 spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ingress-nginx
+      app.kubernetes.io/component: webhook
+
   template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: ingress-nginx
+        app.kubernetes.io/component: webhook
+
     spec:
       restartPolicy: OnFailure
       serviceAccountName: nginx-webhook

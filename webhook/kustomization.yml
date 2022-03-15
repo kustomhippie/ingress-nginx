@@ -8,11 +8,12 @@ resources:
   - clusterrolebinding.yml
   - role.yml
   - rolebinding.yml
-
   - validatingwebhook.yml
   - job.yml
 
-commonLabels:
-  app.kubernetes.io/component: webhook
+images:
+  - name: nginx-certs
+    newName: jettech/kube-webhook-certgen
+    newTag: "v1.5.2"
 
 ...
