@@ -33,10 +33,8 @@ rules:
     verbs:
       - "get"
       - "list"
-      - "update"
       - "watch"
   - apiGroups:
-      - "extensions"
       - "networking.k8s.io"
     resources:
       - "ingresses"
@@ -45,7 +43,6 @@ rules:
       - "list"
       - "watch"
   - apiGroups:
-      - "extensions"
       - "networking.k8s.io"
     resources:
       - "ingresses/status"
@@ -64,7 +61,7 @@ rules:
     resources:
       - "configmaps"
     resourceNames:
-      - "ingress-controller-leader-nginx"
+      - "ingress-controller-leader"
     verbs:
       - "get"
       - "update"
@@ -74,14 +71,6 @@ rules:
       - "configmaps"
     verbs:
       - "create"
-  - apiGroups:
-      - ""
-    resources:
-      - "endpoints"
-    verbs:
-      - "create"
-      - "get"
-      - "update"
   - apiGroups:
       - ""
     resources:
