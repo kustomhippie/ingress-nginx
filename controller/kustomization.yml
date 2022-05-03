@@ -10,6 +10,7 @@ resources:
   - rolebinding.yml
   - service.yml
   - daemonset.yml
+  - ingressclass.yml
 
 configMapGenerator:
   - name: nginx-tcp

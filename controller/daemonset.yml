@@ -29,6 +29,7 @@ spec:
     spec:
       serviceAccountName: nginx-controller
       terminationGracePeriodSeconds: 300
+      dnsPolicy: ClusterFirst
 
       containers:
         - name: server
