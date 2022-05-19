@@ -47,15 +47,18 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
+            - name: metrics
+              containerPort: 8081
+              protocol: TCP
 
           livenessProbe:
             httpGet:
               path: /healthz
-              port: http
+              port: metrics
 
           readinessProbe:
             httpGet:
-              path: /healthz
-              port: http
+              path: /readyz
+              port: metrics
 
 ...

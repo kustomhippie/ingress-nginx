@@ -9,7 +9,7 @@ resources:
 
 images:
   - name: nginx-backend
-    newName: tboerger/errors
-    newTag: "latest"
+    newName: quay.io/webhippie/errors
+    newTag: "1.0.0"
 
 ...
