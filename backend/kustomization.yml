@@ -10,6 +10,6 @@ resources:
 images:
   - name: nginx-backend
     newName: quay.io/webhippie/errors
-    newTag: "1.0.1"
+    newTag: "1.1.0"
 
 ...
