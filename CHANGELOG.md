@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.0](https://github.com/kustomhippie/ingress-nginx/compare/v1.0.1...v2.0.0) (2023-07-17)
+
+
+### Features
+
+* **major:** update actionhippie/kustomize action to v2 ([9f64b5a](https://github.com/kustomhippie/ingress-nginx/commit/9f64b5ad24e1c197a05c694a4f231da81e3a29d1))
+
 ## [1.0.1](https://github.com/kustomhippie/ingress-nginx/compare/v1.0.0...v1.0.1) (2023-07-03)
 
 
