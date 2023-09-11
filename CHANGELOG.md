@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/kustomhippie/ingress-nginx/compare/v2.0.0...v2.0.1) (2023-09-11)
+
+
+### Bugfixes
+
+* **deps:** update registry.k8s.io/ingress-nginx/controller docker tag to v1.8.2 ([8bf2580](https://github.com/kustomhippie/ingress-nginx/commit/8bf25800eb7fef8b6974406551ca437855b134f6))
+
 ## [2.0.0](https://github.com/kustomhippie/ingress-nginx/compare/v1.0.1...v2.0.0) (2023-07-17)
 
 
