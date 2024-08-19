@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.3.2](https://github.com/kustomhippie/ingress-nginx/compare/v2.3.1...v2.3.2) (2024-08-19)
+
+
+### Bugfixes
+
+* **deps:** update registry.k8s.io/ingress-nginx/controller docker tag to v1.11.2 ([2894d0e](https://github.com/kustomhippie/ingress-nginx/commit/2894d0e6037c2f798e2b91456917181d3de0343d))
+* **deps:** update registry.k8s.io/ingress-nginx/kube-webhook-certgen docker tag to v1.4.3 ([ab9d446](https://github.com/kustomhippie/ingress-nginx/commit/ab9d446cdfea3bf5abb86741ac8582929fda5b64))
+
 ## [2.3.1](https://github.com/kustomhippie/ingress-nginx/compare/v2.3.0...v2.3.1) (2024-07-22)
 
 
