@@ -14,6 +14,6 @@ resources:
 images:
   - name: nginx-certs
     newName: registry.k8s.io/ingress-nginx/kube-webhook-certgen
-    newTag: "v1.5.2"
+    newTag: "v1.5.3"
 
 ...
