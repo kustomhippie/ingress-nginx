@@ -27,6 +27,6 @@ generatorOptions:
 images:
   - name: nginx-controller
     newName: registry.k8s.io/ingress-nginx/controller
-    newTag: "v1.12.2"
+    newTag: "v1.12.3"
 
 ...
